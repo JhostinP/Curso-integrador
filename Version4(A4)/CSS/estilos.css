@@ -1,0 +1,119 @@
+body{
+    font-family: gravitas one;
+    background: whitesmoke;
+    margin: 0;
+
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+
+}
+main{
+    flex-grow: 1;
+}
+
+a{
+    text-decoration: none; /*para quitar el subrayado de los link*/
+    color: maroon;
+}
+header{
+    display: flex; /*los elementos se muestren de manera horizontal*/
+    justify-content: space-between; /*para que esten en una esquina y la otra*/
+    align-items: center; /*contenido en el centro*/
+    min-height: 70px; /*para que el tamaño del encabezado se adapte automaticamente*/
+    background: wheat;
+    padding: 10px;
+}
+.logo{
+    display: flex;
+    align-items: center;
+    
+}
+.logo img{
+    height: 50px;
+    margin-right: 10px;
+}
+
+nav a{
+    font-weight: 600;
+    padding-right: 10px; /*para separarlos entre sí un poco*/
+}
+nav a:hover{
+    color: #804000;
+}
+/*Estilos para el contenido*/
+
+.galeria{
+    display: flex;
+    width: auto;
+    height: 500px;
+}
+.galeria img{
+    width: 0px;
+    flex-grow: 1;
+    object-fit: cover;
+    filter: brightness(80%);
+    transition: .7s ease;
+}
+.galeria img:hover{
+    width: 500px;
+    opacity: 1;
+    filter: brightness(130%);
+}
+
+/*Fin*/
+.titulo{
+    text-align: center;
+    background: skyblue;
+    font-size: 200%;
+    color: maroon;
+}
+.corazon{
+    margin: 10px;
+    border: double black 10px;
+    width: 30%;
+}
+.slogan{
+    display: flex; /* Utilizamos flexbox para alinear los elementos horizontalmente */
+    align-items: flex-start;
+}
+.slogan p{
+    font-size: 200%;
+    text-align: center;
+    border: double purple 10px;
+    padding: 10%;
+    font-family: cursive;
+}
+
+@media (max-width:700px){
+    header{
+        flex-direction: column;
+    }
+    nav{
+        padding: 10px 0px;
+    }
+
+    .galeria {
+        display: flex;
+        flex-direction: row; /* Colocar las imágenes una al lado de la otra */
+        width: auto;
+        height: auto;
+        overflow-x: scroll; /* Agregar un desplazamiento horizontal */
+        padding-bottom: 10px;
+      }
+    
+      .galeria img {
+        width: 200px; /* Ancho fijo para las imágenes */
+        height: 200PX;
+        flex-shrink: 0; /* Evitar que las imágenes se reduzcan */
+        object-fit: cover;
+        filter: brightness(80%);
+        transition: 0.7s ease;
+        margin-right: 10px; /* Espacio entre las imágenes */
+      }
+    
+      .galeria img:last-child {
+        margin-right: 0; /* No agregar margen a la última imagen */
+      }
+}
